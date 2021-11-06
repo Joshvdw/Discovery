@@ -1,0 +1,462 @@
+body {
+  background-color: black;
+  color: white;
+  font-family: 'Space Grotesk', sans-serif;
+  height: 100vh;
+  width: 100vw;
+  margin: 0px;
+}
+
+button {
+  padding: 1em;
+  border: none;
+  border-radius: 8px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  font-family: 'Space Grotesk', sans-serif;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: rgba(0, 0, 0);
+}
+
+.page-container {
+  justify-content: center;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  margin: auto;
+	background-image: url('images/night-sky-2.jpg');
+  background-size: cover;
+}
+
+h1 {
+  text-align: center;
+  font-size: 3rem; 
+  letter-spacing: 1.6em;
+  width: 100vw;
+  text-shadow: 1px 1px 30px #fff;
+}
+
+.sun {
+  position: absolute;
+  top: 35vh;
+  left: 40vw;
+
+  width: 20vw;
+  height: 20vw;
+  align-items: center;
+
+  background: radial-gradient(circle, rgba(255,249,199,1) 0%, rgba(255,197,26,1) 50%);
+  border-radius: 100%;
+  box-shadow: 0 0 10vw red;
+  filter: blur(3em);
+}
+
+.trivia-sun {
+  top: 33vh;
+  left: 40vw;
+
+  position: absolute;
+  padding: 2vw;
+  text-align: center;
+
+  height: 17vw;
+  width: 17vw;
+
+  background: rgba(87, 71, 0, 0.6);
+  border-radius: 100%;
+}
+  
+.mercury {
+  left: 8vw;
+  top: 75vh;
+  position: absolute;
+  
+  width: 5vw;
+  height: 5vw;
+  border-radius: 100%;
+  box-shadow: inset 20px -10px 15px rgba(0, 0, 0, 0.8);
+
+  background: rgb(156, 156, 156);
+
+  animation: planet_wobble 5.0s 0.4s linear infinite;
+}
+
+.trivia-mercury {
+  left: 2vw;
+  top: 60vh;
+  position: absolute;
+  padding: 2vw;
+  text-align: center;
+
+  height: 15vw;
+  width: 15vw;
+
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 100%;
+}
+
+.venus {
+  left: 15vw;
+  top: 60vh;
+  position: absolute;
+
+  height: 5vw;
+  width: 5vw;
+  border-radius: 100%;
+  box-shadow: inset 20px -5px 15px rgba(0, 0, 0, 0.8);
+
+  background: rgb(254,254,254);
+  background: linear-gradient(-45deg, rgba(254,254,254,1) 6%, rgba(199,197,168,1) 46%, rgba(217,226,230,1) 100%);
+
+  animation: planet_wobble 5.2s 0.8s linear infinite;
+}
+
+.trivia-venus {
+  left: 10vw;
+  top: 50vh;
+  position: absolute;
+  padding: 2vw;
+  text-align: center;
+
+  height: 15vw;
+  width: 15vw;
+
+  background: rgba(20, 20, 26, 0.8);
+  border-radius: 100%;
+}
+
+.earth {
+  left: 25vw;
+  top: 20vh;
+  position: absolute;
+
+  height: 10vw;
+  width: 10vw;
+  border-radius: 100%;
+  box-shadow: inset 20px 0 15px rgba(0, 0, 0, 0.8);
+
+  background: rgb(86,213,110);
+  background: linear-gradient(-15deg, 
+    rgba(86,213,110,1) 0%, 
+    rgba(255,255,255,1) 0%, 
+    rgba(212,227,225,1) 11%, 
+    rgba(86,213,110,1) 25%, 
+    rgba(50,152,208,1) 40%, 
+    rgba(60,168,182,1) 57%, 
+    rgba(86,213,110,1) 70%, 
+    rgba(50,152,208,1) 86%, 
+    rgba(255,255,255,1) 99%);
+
+  animation: planet_wobble 5.0s 0.4s linear infinite;
+}
+
+.trivia-earth {
+  left: 20vw;
+  top: 12vh;
+  position: absolute;
+  padding: 2vw;
+  text-align: center;
+
+  height: 15vw;
+  width: 15vw;
+
+  background: rgba(27, 56, 0, 0.8);
+  border-radius: 100%;
+}
+
+.mars {
+  left: 12vw;
+  top: 35vh;
+  position: absolute;
+
+  height: 6vw;
+  width: 6vw;
+  border-radius: 100%;
+  box-shadow: inset 20px 0 15px rgba(0, 0, 0, 0.8);
+
+  background: rgb(255,255,255);
+  background: linear-gradient(279deg,  
+    rgba(255,87,0,1) 19%, 
+    rgba(255,130,0,1) 50%, 
+    rgba(255,128,46,1) 72%, 
+    rgba(210,149,110,1) 90%);
+
+  animation: planet_wobble 5.4s 1s linear infinite;
+}
+
+.trivia-mars {
+  left: 5vw;
+  top: 24vh;
+  position: absolute;
+  padding: 2vw;
+  text-align: center;
+
+  height: 15vw;
+  width: 15vw;
+
+  background: rgba(68, 35, 0, 0.8);
+  border-radius: 100%;
+  
+}
+
+.jupiter {
+  position: absolute;
+  top: 50vh;
+  left: 70vw;
+
+  height: 20vw;
+  width: 20vw;
+  border-radius: 100%;
+  box-shadow: inset -75px 0 25px rgba(0, 0, 0, 0.8);
+
+  background: rgb(255,255,255);
+  background: linear-gradient(-8deg, 
+    rgba(255,255,255,1) 0%, 
+    rgba(255,161,92,1) 10%, 
+    rgba(204,169,125,1) 21%, 
+    rgba(232,159,113,1) 32%, 
+    rgba(255,228,210,1) 41%, 
+    rgba(255,157,87,1) 56%, 
+    rgba(255,195,151,1) 71%, 
+    rgba(251,167,113,1) 83%, 
+    rgba(255,255,255,1) 99%);
+
+  animation: planet_wobble 5.4s 1.4s linear infinite;
+}
+
+.trivia-jupiter {
+  top: 47vh;
+  left: 68vw;
+  position: absolute;
+  padding: 2vw;
+  text-align: center;
+
+  height: 20vw;
+  width: 20vw;
+
+  background: rgba(48, 31, 0, 0.8);
+  border-radius: 100%;
+}
+
+.saturn {
+  position: absolute;
+  top: 65vh;
+  left: 28vw;
+
+  height: 15vw;
+  width: 15vw;
+  border-radius: 100%;
+  box-shadow: inset 45px -20px 25px rgba(0, 0, 0, 0.8);
+
+  background: rgb(204,169,125);
+  background: linear-gradient(0deg, 
+    rgba(204,169,125,1) 16%, 
+    rgba(255,239,210,1) 36%, 
+    rgba(255,209,87,1) 56%, 
+    rgba(255,195,151,1) 71%, 
+    rgba(251,202,113,1) 83%, 
+    rgba(255,255,255,1) 99%);
+
+  animation: planet_wobble 5.4s 1.4s linear infinite;
+}
+
+.trivia-saturn {
+  top: 59vh;
+  left: 25vw;
+  position: absolute;
+  padding: 2vw;
+  text-align: center;
+
+  height: 17vw;
+  width: 17vw;
+
+  background: rgba(46, 28, 0, 0.8);
+  border-radius: 100%;
+}
+
+/* STRETCH: add saturn's rings to saturn div? */
+.saturn-rings {
+  width: 40vw;
+  height: 40vw;
+  transform: rotateZ(-15deg);
+  background: radial-gradient(ellipse at center,  rgba(24,19,25,0) 0%,rgba(53,52,51,0) 34%,rgba(55,54,52,1) 36%,rgba(56,55,53,1) 37%,rgba(68,67,66,1) 38%,rgba(56,55,53,1) 39%,rgba(68,67,66,1) 40%,rgba(56,55,53,1) 41%,rgba(87,77,76,1) 42%,rgba(87,77,76,1) 44%,rgba(113,110,103,1) 46%,rgba(113,110,103,1) 48%,rgba(113,98,93,1) 49%,rgba(113,98,93,1) 51%,rgba(122,115,105,1) 52%,rgba(113,98,93,1) 53%,rgba(113,98,93,1) 54%,rgba(122,115,105,1) 55%,rgba(106,99,89,1) 56%,rgba(106,99,89,1) 58%,rgba(79,76,76,0) 60%,rgba(65,64,70,1) 61%,rgba(65,64,70,1) 62%,rgba(90,85,89,1) 63%,rgba(78,74,73,1) 65%,rgba(78,73,74,1) 67%,rgba(78,73,74,0) 68%,rgba(78,73,75,1) 69%,rgba(78,73,75,1) 70%,rgba(78,73,76,0) 71%,rgba(77,72,76,0) 72%,rgba(24,19,25,0) 100%);
+  transform: rotateX(75deg);
+}
+
+
+
+.uranus {
+  top: 25vh;
+  left: 65vw;
+  position: absolute;
+
+  height: 7vw;
+  width: 7vw;
+  border-radius: 100%;
+  box-shadow: inset -20px 0 15px rgba(0, 0, 0, 0.8);
+
+  background: rgb(113,137,138);
+  background: linear-gradient(0deg, 
+    rgba(113,137,138,1) 0%, 
+    rgba(182,226,231,1) 100%);
+
+  animation: planet_wobble 5.4s 0.6s linear infinite;
+}
+
+.trivia-uranus {
+  top: 15vh;
+  left: 60vw;
+  position: absolute;
+  padding: 2vw;
+  text-align: center;
+
+  height: 15vw;
+  width: 15vw;
+
+  background: rgba(13, 6, 32, 0.8);
+  border-radius: 100%;
+}
+
+.neptune {
+  top: 30vh;
+  left: 85vw;
+  position: absolute;
+
+  height: 5vw;
+  width: 5vw;
+  border-radius: 100%;
+  box-shadow: inset -20px 0 15px rgba(0, 0, 0, 0.8);
+
+  background: rgb(184,220,235);
+  background: linear-gradient(-10deg, 
+    rgba(184,220,235,1) 0%, 
+    rgba(166,211,228,1) 0%, 
+    rgba(85,141,163,1) 16%, 
+    rgba(107,156,175,1) 31%, 
+    rgba(161,193,205,1) 42%, 
+    rgba(149,185,198,1) 52%, 
+    rgba(85,141,163,1) 66%, 
+    rgba(112,164,185,1) 86%, 
+    rgba(200,240,255,1) 100%);
+
+  animation: planet_wobble 5.4s 1.6s linear infinite;
+}
+
+.trivia-neptune {
+  top: 20vh;
+  left: 80vw;
+  position: absolute;
+  padding: 2vw;
+  text-align: center;
+
+  height: 15vw;
+  width: 15vw;
+
+  background: rgba(0, 33, 54, 0.8);
+  border-radius: 100%;
+}
+
+.pluto {
+  position: absolute;
+  top: 15vh;
+  left: 80vw;
+
+  height: 4vw;
+  width: 4vw;
+  border-radius: 100%;
+  box-shadow: inset -20px 0 15px rgba(0, 0, 0, 0.8);
+
+  background: rgb(11, 79, 100);
+  background: linear-gradient(0deg, 
+    rgb(15, 109, 138) 0%, 
+    rgb(6, 99, 153) 100%);
+
+  animation: planet_wobble 5.8s 1s linear infinite;
+}
+
+.trivia-pluto {
+  top: 5vh;
+  left: 72vw;
+  position: absolute;
+  padding: 2vw;
+  text-align: center;
+
+  height: 15vw;
+  width: 15vw;
+
+  background: rgba(0, 25, 58, 0.8);
+  border-radius: 100%;
+}
+
+
+@keyframes planet_wobble {
+  0%{transform:translateY(0px)}
+  25%{transform:translateY(6px)}
+  50%{transform:translateY(0px)}
+  75%{transform:translateY(-6px)}
+  100%{transform:translateY(0px)}
+}
+
+.planet-name {
+  text-transform: capitalize;
+  text-align: center;
+  padding-top: 2rem;
+}
+
+.planet-name-info {
+  text-transform: capitalize;
+}
+
+.back-icon {
+  font-size: 2em;
+}
+
+.back-btn {
+  color: white;
+  text-decoration: none;
+}
+
+.planet-info-wrapper {
+  margin-left: 200px;
+  margin-top: 150px;
+  font-size: 1.4rem;
+  background: rgba(0, 0, 0, 0.5);
+  width: 33%;
+  padding: 35px;
+}
+
+.planet-info {
+  margin-top: 50px;
+} 
+
+.info-planet {
+  height: 65vw;
+  width: 65vw; 
+  position: absolute;
+  top: 40vh;
+  left: 65vw;
+}
+
+.trivia-jupiter {
+  position: absolute;
+  top: 50vh;
+  left: 70vw;
+  height: 22vw;
+  width: 22vw;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 100%;
+}
+
+/* SHOW / HIDE TRIVIA  */
+.show-trivia {
+  display: block;
+  text-align: center;
+}
+
+.show-planet {
+  display: none;
+}
